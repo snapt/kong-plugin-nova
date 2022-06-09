@@ -50,7 +50,7 @@ Important: set the config.novaService URL to point to a Nova Kong WAF!
 ```
 curl -i -XPOST \
     --url http://localhost:8001/services/novatest-service/plugins/ \
-    --data 'name=nova&config.novaService=http://159.65.209.14'
+    --data 'name=nova&config.novaService=http://YOUR_NOVA_WAF_IP'
 ```
 
 ## Test a legitimate request
