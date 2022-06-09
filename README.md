@@ -2,13 +2,19 @@ Kong Nova Plugin
 ====================
 
 ## Install the plugin
+Run the below as root on your Kong installation.
+
+```
 git clone https://github.com/snapt/kong-plugin-nova.git
 cd kong-plugin-nova
 luarocks make
 luarocks pack kong-plugin-nova 0.1.0
 luarocks install kong-plugin-nova-0.1.0-1.all.rock
+```
 
 ## Add plugin to kong.conf
+Edit your kong.conf file and add nova to the plugins list, then restart Kong.
+
 ```
 plugins = bundled, nova
 ```
@@ -17,7 +23,7 @@ plugins = bundled, nova
 kong restart
 ```
 
-## Create example service
+## Create a test service
 ```
 curl -i -X POST \
   --url http://localhost:8001/services/ \
@@ -25,16 +31,15 @@ curl -i -X POST \
   --data 'url=http://mockbin.org'
 ```
 
-## Add example route
+## Add route for test service
 ```
 curl -i -X POST \
   --url http://localhost:8001/services/novatest-service/routes \
   --data 'hosts[]=novatest.com'
 ```
 
-
 ## Configure Nova plugin for novatest-service
-Important: set the config.novaService URL to point to a Nova Kong WAF.
+Important: set the config.novaService URL to point to a Nova Kong WAF!
 
 ```
 curl -i -XPOST \
@@ -61,7 +66,7 @@ If everything is working you will see:
 $ curl -i -X GET \
   --url "http://localhost:8000/?test=/etc/passwd" \
   --header 'Host: novatest.com'
-  
+
 HTTP/1.1 403 Forbidden
 Date: Thu, 09 Jun 2022 08:20:53 GMT
 Content-Type: application/json; charset=utf-8
