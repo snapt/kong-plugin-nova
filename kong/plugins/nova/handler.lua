@@ -40,9 +40,7 @@ function nova:access(config)
     return kong.response.exit(500, { message = "Failed to communicate with Nova" })
   end
 
-  local response_headers = novaRes.headers
   local response_status = novaRes.status
-  local response_content = novaRes.body
 
   -- if nova returns > 399 we return the Nova block page
   if response_status > 399 then
