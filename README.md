@@ -1,6 +1,12 @@
 Kong Nova Plugin
 ====================
 
+# Installation Instructions
+
+To install the Nova WAF plugin for Kong follow the instructions below. 
+
+Note that you will need a Nova WAF set up in order to send requests to be scanned. 
+
 ## Install the plugin
 Run the below as root on your Kong installation.
 
@@ -84,6 +90,13 @@ Server: kong/2.8.1.1-enterprise-edition
 ## Using the Nova Plugin
 
 You can now configure the "nova" plugin on any services as shown above. 
+
+
+# Nova Instructions
+
+Guide available soon. 
+
+1 . Ensure X-Forwarded-Host is set as your ```Real IP Override``` field on your ADC.
 
 
 Details
