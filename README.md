@@ -94,13 +94,4 @@ You can now configure the "nova" plugin on any services as shown above.
 
 # Nova Instructions
 
-Guide available soon. 
-
-1 . Ensure X-Forwarded-Host is set as your ```Real IP Override``` field on your ADC.
-
-
-Details
--------
-
-* *Kong plugin name*: `nova`
-* *Kong plugin version*: `0.1.0`
+Follow our official [Nova Kong WAF](https://nova-docs.snapt.net/guide_kong.html) guide.
